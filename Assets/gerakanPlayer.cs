@@ -37,5 +37,12 @@ public class gerakanPlayer : MonoBehaviour
         playerPutaran.localEulerAngles = new Vector3(0, gerak * 90, 0);
     }
 
+    private void OnCollisionEnter(Collision collision){
+        if(collision.collider.CompareTag("virus")){
+            Time.timeScale = 0;
+            Destroy(gameObject);
+        }
+    }
+
 
 }
